@@ -110,3 +110,42 @@ a {
     transform: scale(1.1) translateY(100%);
     z-index: 100px;
 } */
+
+/* #styleImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  animation: spin 10s linear infinite;
+} */
+@keyframes slide-left {
+  0% {
+    left: -100%;
+  } /* điểm bắt đầu của animation, đi từ ngoài màn hình trái */
+  100% {
+    left: 100%;
+  } /* điểm kết thúc của animation, đi ra ngoài màn hình phải */
+}
+
+@keyframes slide-right {
+  0% {
+    left: 100%;
+  } /* điểm bắt đầu của animation, đi từ ngoài màn hình phải */
+  100% {
+    left: -100%;
+  } /* điểm kết thúc của animation, đi ra ngoài màn hình trái */
+}
+#styleImg {
+  position: absolute;
+  top: 80%; /* vị trí theo chiều dọc giữa màn hình */
+  transform: translateY(-50%);
+  animation: slide-left 5s infinite alternate; /* áp dụng animation slide, lặp lại vô hạn */
+}
+#styleImg.reverse {
+  animation-name: slide-right; /* đặt lại animation-name là slide-right khi có class reverse */
+}
+/* @keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+} */
